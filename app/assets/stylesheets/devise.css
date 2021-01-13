@@ -1,0 +1,20 @@
+.create-acount{
+  font-size: 50px;
+
+}
+.user-form{
+  padding-left:30vw ;
+  margin-top: 100px;
+}
+
+.field{
+  color: #22425a;
+  margin-bottom: 30px;
+}
+.sign-btn{
+  background-color: #22425a;
+  border: none;
+  color: #f7f6e7;
+  height: 40px;
+  width: 100px;
+}

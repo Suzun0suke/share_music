@@ -1,0 +1,27 @@
+<header class="top-page-header">
+  <div class="top-contents">
+    <%= link_to "Share Music", root_path , class:"logo" %>
+    <%= link_to "Ranking", "#", class: "top-var" %>
+    <%= link_to "新着", "#", class:"top-var" %>
+    <form class="search-form", action ="#">
+      <input class= "input-box", placeholder="キーワード、ハッシュタグから探す">
+      <button class="search-btn">
+        検索
+      </button>
+    </form>
+  </div>
+  <div class= "head-bottom-contents">
+  <% if user_signed_in? %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: "DELETE", class:"user-btn" %>
+    <%= link_to "投稿", "#", class:"user-btn" %>
+    <% if current_user.image.present?%>
+    <%= link_to image_tag(current_user.image.variant(resize: '50x50'), class:"user-icon"), "#" %>
+    <% else %>
+    <%= link_to current_user.name, "#" %>
+    <% end %>
+  <% else %>
+    <%= link_to "ログイン", new_user_session_path, class: "user-btn" %>
+    <%= link_to "新規登録", new_user_registration_path, class:"user-btn" %>
+  <% end %>
+  </div>
+</header>
