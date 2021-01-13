@@ -13,9 +13,11 @@
   <div class= "head-bottom-contents">
   <% if user_signed_in? %>
     <%= link_to "ログアウト", destroy_user_session_path, method: "DELETE", class:"user-btn" %>
-    <%= link_to "投稿", new_post_path, class:"user-btn" %>
+    <%= link_to "投稿", "#", class:"user-btn" %>
     <% if current_user.image.present?%>
     <%= link_to image_tag(current_user.image.variant(resize: '50x50'), class:"user-icon"), "#" %>
+    <% else %>
+    <%= link_to current_user.name, "#" %>
     <% end %>
   <% else %>
     <%= link_to "ログイン", new_user_session_path, class: "user-btn" %>
