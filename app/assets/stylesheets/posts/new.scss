@@ -1,0 +1,22 @@
+.form{
+  display: flex;
+  flex-direction: column;
+  padding-left: 30vw;
+  margin-top: 100px;
+}
+.post-form{
+  width: 50vw;
+  height: 40px;
+  margin-bottom: 20px;
+}
+.form-btn{
+  background-color: #22425a;
+  border: none;
+  color: #f7f6e7;
+  height: 40px;
+  width: 100px;
+  margin-top: 20px;
+}
+.form p{
+  color: #22425a;
+}
