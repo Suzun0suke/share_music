@@ -12,14 +12,15 @@
       <%= image_tag (post.image), class: "list-img"%>
     <%end%>
       <ul class="musics">
-      <% @musics_num.times do |i|%>
-        <li><%=@musics[i].name%></li>
+      <%@musics = sp_list(post.url)%>
+      <%@musics.length.times do |i|%>
+      <li><%=@musics[i].name%></li>
       <%end%>
       </ul>
     </div>
     <div class="bottom-contents">
     <%=link_to image_tag("app-m.png", class:"icons"), "#" %>
-    <%=link_to image_tag("spotify.png", class:"icons"), "#" %>
+    <%=link_to image_tag("spotify.png", class:"icons"), "https://open.spotify.com/playlist/#{post.url}" %>
     <%=link_to image_tag("y-m.png", class:"icons"), "#" %>
     </div>
   </div>
