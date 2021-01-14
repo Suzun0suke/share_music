@@ -12,7 +12,9 @@
       <%= image_tag (post.image), class: "list-img"%>
     <%end%>
       <ul class="musics">
-        <li><%=post.url%></li>
+      <% @musics_num.times do |i|%>
+        <li><%=@musics[i].name%></li>
+      <%end%>
       </ul>
     </div>
     <div class="bottom-contents">
