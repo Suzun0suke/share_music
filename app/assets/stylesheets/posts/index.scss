@@ -11,6 +11,10 @@ li{
   height: 120px;
   width: 120px;
 }
+.contents{
+  display: flex;
+  flex-wrap: wrap;
+}
 .content{
   border: 3px solid #22425a ;
   width: calc(40vw);
