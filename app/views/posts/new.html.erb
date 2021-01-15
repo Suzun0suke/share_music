@@ -2,10 +2,11 @@
 
 <%= form_with model:@post, local: true  do |form| %>
 <div class="form">
-
-  <%= form.text_field :title, placeholder: "プレイリストのタイトルを入力してください", class:"post-form" %>
-  <%= form.text_field :url, placeholder:"音楽のURLを入力してください", rows: "1", class:"post-form" %>
-  <p>プレイリストのイメージ画像を添付してください</p>
+  <p>プレイリストのタイトル</p>
+  <%= form.text_field :title, class:"post-form" %>
+  <p>Spotifyで作成したプレイリストのURL</p>
+  <%= form.text_field :url, rows: "1", class:"post-form" %>
+  <p>プレイリストのイメージ画像</p>
   <%= form.file_field :image %>
   <%= form.submit "SEND" , class:"form-btn"%>
   </div>

@@ -2,6 +2,8 @@
 
 <div class="contents">
 <% @posts.each do |post| %>
+<%@musics = sp_list(post.url)%>
+<%if @musics.present?%>
   <div class="content">
     <div class="top-content">
     <h2><%= post.title%></h2>
@@ -12,9 +14,8 @@
       <%= image_tag (post.image), class: "list-img"%>
     <%end%>
       <ul class="musics">
-      <%@musics = sp_list(post.url)%>
       <%@musics.length.times do |i|%>
-      <li><%=@musics[i].name%></li>
+        <li><%=@musics[i].name%></li>
       <%end%>
       </ul>
     </div>
@@ -25,4 +26,5 @@
     </div>
   </div>
   <% end %>
+<% end %>  
 </div>
