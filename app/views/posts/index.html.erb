@@ -10,9 +10,16 @@
     <a href="#" class="user"><%= post.user.name%></a>
     </div>
     <div class="play-list">
-    <%if post.image.present?%>
-      <%= image_tag (post.image), class: "list-img"%>
-    <%end%>
+      <div class="left-contents">
+        <%if post.image.present?%>
+          <%= image_tag (post.image), class: "list-img"%>
+        <%end%>
+        <% post.tags.each do |tag| %>
+          <div class="hash-name">
+            <span class = "hash" >#</span><%= tag.name%>
+          </div>
+        <%end%>
+      </div>
       <ul class="musics">
       <%@musics.length.times do |i|%>
         <li><%=@musics[i].name%></li>

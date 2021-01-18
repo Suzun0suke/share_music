@@ -1,20 +1,26 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all.includes(:user).order("created_at DESC")
+    @posts = Post.all.includes(:user).order(created_at: :desc)
   end
 
   def new
-    @post = Post.new
+    @post = Postnew.new
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Postnew.new(post_params)
     if @post.save
       redirect_to root_path
     else
-      render :new
+      render "new"
     end
+  end
+
+  def search
+    return nil if params[:keyword] == ""
+    tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"])
+    render json:{ keyword: tag}
   end
 
   def sp_list(url)
@@ -37,7 +43,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :url, :image).merge(user_id: current_user.id)
+    params.require(:postnew).permit(:title, :url, :image, :name).merge(user_id: current_user.id)
   end
 
 end
