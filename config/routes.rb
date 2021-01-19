@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to:"posts#index"
   resources :posts, only:[:new, :create] do
     collection do
-      get 'search'
+      get 'tag_search'
     end
   end
 end
