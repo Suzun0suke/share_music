@@ -24,6 +24,10 @@ class PostsController < ApplicationController
     render json:{ keyword: tag}
   end
 
+  def search
+    @posts = Post.search(params[:keyword])
+  end
+
   def sp_list(url)
     if url.match("https://open.spotify.com/playlist/")
       musics =[]
