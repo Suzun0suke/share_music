@@ -2,27 +2,29 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.includes(:user).order(created_at: :desc)
+    if params[:tag_name]
+      @posts = Post.tagged_with("#{params[:tag_name]}")
+    end
   end
 
   def new
-    @post = Postnew.new
+    @post = Post.new
   end
 
   def create
-    @post = Postnew.new(post_params)
-    if @post.valid?
-      @post.save
+    @post = Post.new(post_params)
+    if @post.save
       redirect_to root_path
     else
       render :new
     end
   end
 
-  def tag_search
-    return nil if params[:keyword] == ""
-    tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"])
-    render json:{ keyword: tag}
-  end
+  # def tag_search
+  #   return nil if params[:keyword] == ""
+  #   tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"])
+  #   render json:{ keyword: tag}
+  # end
 
   def search
     @posts = Post.search(params[:keyword])
@@ -48,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:postnew).permit(:title, :url, :image, :name).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :url, :image, :name, :tag_list).merge(user_id: current_user.id)
   end
 
 end
