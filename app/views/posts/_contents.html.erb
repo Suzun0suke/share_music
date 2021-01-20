@@ -10,7 +10,7 @@
     <div class="play-list">
       <div class="left-contents">
         <%if post.image.present?%>
-          <%= image_tag (post.image), class: "list-img"%>
+          <%= link_to (image_tag (post.image),class: "list-img"), post_path(post.id) %>
         <%end%>
         <% post.tag_list.each do |tag| %>
           <div class="hash-name">
