@@ -18,10 +18,14 @@ class PostsController < ApplicationController
     end
   end
 
-  def search
+  def tag_search
     return nil if params[:keyword] == ""
     tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"])
     render json:{ keyword: tag}
+  end
+
+  def search
+    @posts = Post.search(params[:keyword])
   end
 
   def sp_list(url)
