@@ -7,8 +7,8 @@
   <%= form.text_field :title, class:"post-form" %>
   <p>Spotifyで作成したプレイリストのURL</p>
   <%= form.text_field :url, rows: "1", class:"post-form" %>
-  <p>ハッシュタグを入力してください</p>
-  <%= form.text_field :name, rows: "1", class:"post-form" %>
+  <p>ハッシュタグを入力してください<span class="descroption">(複数入力する場合「,」で区切ってください)</p>
+  <%= form.text_field :tag_list, rows: "1", class:"post-form" %>
   <div id= "search-result"></div>
   <p>プレイリストのイメージ画像</p>
   <%= form.file_field :image %>

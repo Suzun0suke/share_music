@@ -1,37 +1,3 @@
 <%= render "shared/header" %>
 
-<div class="contents">
-<% @posts.each do |post| %>
-<%@musics = sp_list(post.url)%>
-<%if @musics.present?%>
-  <div class="content">
-    <div class="top-content">
-    <h2><%= post.title%></h2>
-    <a href="#" class="user"><%= post.user.name%></a>
-    </div>
-    <div class="play-list">
-      <div class="left-contents">
-        <%if post.image.present?%>
-          <%= image_tag (post.image), class: "list-img"%>
-        <%end%>
-        <% post.tags.each do |tag| %>
-          <div class="hash-name">
-            <span class = "hash" >#</span><%= tag.name%>
-          </div>
-        <%end%>
-      </div>
-      <ul class="musics">
-      <%@musics.length.times do |i|%>
-        <li><%=@musics[i].name%></li>
-      <%end%>
-      </ul>
-    </div>
-    <div class="bottom-contents">
-    <%=link_to image_tag("app-m.png", class:"icons"), "#" %>
-    <%=link_to image_tag("spotify.png", class:"icons"), "https://open.spotify.com/playlist/#{post.url}" %>
-    <%=link_to image_tag("y-m.png", class:"icons"), "#" %>
-    </div>
-  </div>
-  <% end %>
-<% end %>  
-</div>
+<%= render "contents", posts: @posts%>
