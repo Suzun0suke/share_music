@@ -20,11 +20,9 @@ class PostsController < ApplicationController
     end
   end
 
-  # def tag_search
-  #   return nil if params[:keyword] == ""
-  #   tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"])
-  #   render json:{ keyword: tag}
-  # end
+  def show
+    @post = Post.find(params[:id])
+  end
 
   def search
     @posts = Post.search(params[:keyword])
@@ -45,7 +43,22 @@ class PostsController < ApplicationController
     end
   end
 
-  helper_method :sp_list
+  def sp_list_full(url)
+    if url.match("https://open.spotify.com/playlist/")
+      musics =[]
+      url.slice!("https://open.spotify.com/playlist/")
+      require 'rspotify'
+      RSpotify.authenticate(ENV["SPOTIFY_CLIENT_ID"], ENV["SPOTIFY_CLIENT_SECRET"])
+      playlist = RSpotify::Playlist.find_by_id(url)
+      music_list = playlist.tracks
+      music_list.length.times do |i|
+        musics << music_list[i]
+        end
+        return musics
+      end
+    end
+
+  helper_method :sp_list, :sp_list_full
 
   private
 
