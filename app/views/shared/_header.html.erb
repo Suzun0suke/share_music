@@ -2,7 +2,6 @@
   <div class="top-contents">
     <%= link_to "Share Music", root_path , class:"logo" %>
     <%= link_to "Ranking", "#", class: "top-var" %>
-    <%= link_to "新着", "#", class:"top-var" %>
     <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
       <%= form.submit "検索", class: "search-btn" %>

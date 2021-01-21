@@ -17,7 +17,7 @@
   display: flex;
   justify-content: space-between;
   width: 40vw;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .title-show{
   font-size: 30px;
@@ -28,7 +28,15 @@
   font-size: 20px;
   margin-top: 10px;
 }
-
+.link-show{
+  display: flex;
+  align-items: center;
+}
+.text-show{
+  color: #22425a;
+  margin-left: 10px;
+  font-weight: bold;
+}
 .list-img-show{
   width: 300px;
   height: 300px;
@@ -40,4 +48,15 @@
 }
 .hash-name-show{
   display: flex;
+}
+.more-show{
+ display: flex;
+ margin-left: 30vw;
+ margin-bottom: 10px;
+}
+.edit{
+  padding: 10px;
+  color: #22425a;
+  margin-left: 10px;
+  height: 40px;
 }
