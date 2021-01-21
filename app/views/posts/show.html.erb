@@ -1,0 +1,35 @@
+<%=render "shared/header"%>
+<div class="contents-show">
+<%@musics = sp_list_full(@post.url)%>
+<%if @musics.present?%>
+  <div class="content-show">
+    <div class="top-content-show">
+      <h2 class="title-show"><%= @post.title %></h2>
+      <a href="#" class="user-show">by <%= @post.user.name%></a>
+    </div>
+    <% if user_signed_in? && current_user.id == @post.user_id %>
+    <div class="more-show">
+      <%= link_to "編集",edit_post_path(@post.id), class:"edit"%>
+      <%= link_to "削除","#", class:"edit"%>
+    </div>
+    <% end %>
+      <%if @post.image.present?%>
+        <%= link_to (image_tag (@post.image),class: "list-img-show"), post_path(@post.id) %>
+      <%end%>
+      <div class="link-show">
+        <%= link_to "spotifyで聴く", "https://open.spotify.com/playlist/#{@post.url}", class:"text-show"%>
+      </div>
+    <div class="hash-name-show">
+      <% @post.tag_list.each do |tag| %>
+        <span class = "hash" >#</span><%= link_to tag, root_path(tag_name: tag), class:"tag-show" %>
+      <%end%>
+    </div>
+    <ul class="musics">
+      <%@musics.length.times do |i|%>
+        <li><%=@musics[i].name%></li>
+      <%end%>
+    </ul>
+  </div>
+  <% end %>
+
+</div>
