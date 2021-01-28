@@ -24,11 +24,14 @@
         <span class = "hash" >#</span><%= link_to tag, root_path(tag_name: tag), class:"tag-show" %>
       <%end%>
     </div>
-    <ul class="musics">
+    <ul class="musics-show">
       <%@musics.length.times do |i|%>
-        <li><%=@musics[i].name%></li>
+        <li><%= @musics[i].name %></li>
       <%end%>
     </ul>
+    <div class="comments">
+
+    </div>
   </div>
   <% end %>
 
