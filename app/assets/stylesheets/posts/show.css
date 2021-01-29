@@ -40,7 +40,7 @@
 .list-img-show{
   width: 300px;
   height: 300px;
-  
+  object-fit: cover;
 }
 .tag-show{
   text-decoration: none;
@@ -59,4 +59,11 @@
   color: #22425a;
   margin-left: 10px;
   height: 40px;
+}
+.bottom-contents-show{
+  display: flex;
+  align-items: center;
+}
+.twitter{
+  margin: 0 20px;
 }
