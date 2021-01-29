@@ -21,6 +21,7 @@
 }
 .title-show{
   font-size: 30px;
+  border-bottom: solid #22425a 2px;
 }
 .user-show{
   text-decoration: none;
@@ -66,4 +67,9 @@
 }
 .twitter{
   margin: 0 20px;
+}
+.show-name{
+  font-size: 20px;
+  text-decoration: none;
+  color: #22425a;
 }
