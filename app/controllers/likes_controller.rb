@@ -1,13 +1,15 @@
 class LikesController < ApplicationController
   before_action :set_post
   def create
-    like = current_user.likes.new(post_id: @post.id)
+    like = @post.likes.new(user_id: current_user.id)
     like.save
+    redirect_to root_path
   end
 
   def destroy
     like = current_user.likes.find_by(post_id: @post.id)
     like.destroy
+    redirect_to root_path
   end
 
   private

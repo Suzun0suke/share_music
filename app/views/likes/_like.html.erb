@@ -1,11 +1,11 @@
-<div class="like-link" id="like-link-<%= post.id %>">
-  <% if current_user.likes.find_by(post_id: post.id) %>
-    <%= link_to post_like_path(post.id), method: :delete, remote: true do %>
-        <div class = "iine__button">❤️<%= post.likes.count %></div>
-    <% end %>
-  <% else %>
-    <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
-        <div class = "iine__button">♡️<%= post.likes.count %></div>
-    <% end %>
+<% if post.liked_by?(current_user) %>
+   <%= link_to post_like_path(post_id:post.id, id: current_user.id), method: :DELETE do %>
+   <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+   <span class="like"><%= post.likes.count %></span>
+   <% end %>
+<% else %>
+  <%= link_to post_likes_path(post_id:post.id, id: current_user.id), method: :POST do %>
+  <i class="fa fa-heart" aria-hidden="true" style="color: gray;"></i>
+  <span class="like"><%= post.likes.count %></span>
   <% end %>
-</div>
+<% end %>
