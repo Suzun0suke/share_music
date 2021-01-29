@@ -5,7 +5,12 @@
   <div class="content-show">
     <div class="top-content-show">
       <h2 class="title-show"><%= @post.title %></h2>
-      <a href="#" class="user-show">by <%= @post.user.name%></a>
+      <div class="user-show">
+      <%= link_to "by #{@post.user.name}",user_path(@post.user_id), class:"show-name"%>
+      <% if @post.user.image.present?%>
+      <%=image_tag @post.user.image.variant(resize: '50x50'), class:"user-icon"%>
+      <%end%>
+      </div>
     </div>
     <% if user_signed_in? && current_user.id == @post.user_id %>
     <div class="more-show">

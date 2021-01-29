@@ -48,6 +48,11 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:keyword])
   end
 
+  def ranking
+    @like_posts = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(5).pluck(:post_id))
+    @tags = Post.tag_counts_on(:tags).most_used(5)
+  end
+
   private
 
   def post_params
