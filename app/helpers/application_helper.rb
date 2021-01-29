@@ -21,7 +21,7 @@ module ApplicationHelper
       require 'rspotify'
       RSpotify.authenticate(ENV["SPOTIFY_CLIENT_ID"], ENV["SPOTIFY_CLIENT_SECRET"])
       playlist = RSpotify::Playlist.find_by_id(url)
-      music_list = playlist.tracks
+      music_list = playlist.tracks(limit:40)
       music_list.length.times do |i|
         musics << music_list[i]
         end
