@@ -1,14 +1,13 @@
 <%= form_with model: post, url: url, local: true  do |form| %>
-<%= render 'shared/error_messages', model: form.object %>
 <div class="form">
-  <p>プレイリストのタイトル</p>
+  <p>プレイリストのタイトル <span class = "required">　*必須</span></p>
   <%= form.text_field :title, class:"post-form" %>
-  <p>Spotifyで作成したプレイリストのURL</p>
+  <p>Spotifyで作成したプレイリストのURL<span class = "required">　*必須</span></p>
   <%= form.text_field :url, rows: "1", class:"post-form" %>
   <p>ハッシュタグを入力してください<span class="descroption">(複数入力する場合「,」で区切ってください)</p>
   <%= form.text_field :tag_list, rows: "1", class:"post-form" %>
   <div id= "search-result"></div>
-  <p>プレイリストのイメージ画像</p>
+  <p>プレイリストのイメージ画像<span class = "required">　*必須</span></p>
   <%= form.file_field :image %>
   <%= form.submit "SEND" , class:"form-btn"%>
   </div>

@@ -7,6 +7,13 @@
       <%= form.submit "検索", class: "search-btn" %>
     <% end %>
   </div>
+    <% flash.each do |message_type, message| %>
+      <%if message_type == "alert" || message_type == "notice"%>
+        <div class = "flash">
+          <span class="message"><%= message %></span>
+        </div>
+      <% end %>
+    <% end %>
   <div class= "head-bottom-contents">
   <% if user_signed_in? %>
     <%= link_to "ログアウト", destroy_user_session_path, method: "DELETE", class:"user-btn" %>

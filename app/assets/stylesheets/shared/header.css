@@ -64,6 +64,16 @@
 .user-icon{
   border-radius: 50%;
 }
- a{
+a{
   text-decoration: none;
+}
+.flash{
+  background-color: rgba(84,163,224,0.5);
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.message{
+  color: #22425a;
 }
