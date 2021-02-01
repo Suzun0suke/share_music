@@ -6,6 +6,12 @@ class Post < ApplicationRecord
   has_many :tags, through: :post_tags
   has_many :likes, dependent: :destroy
 
+  with_options presence: true do
+    validates :title
+    validates :image
+    validates :url
+  end
+
   def self.search(search)
     if search != ""
       Post.where('title LIKE(?)', "%#{search}%")
