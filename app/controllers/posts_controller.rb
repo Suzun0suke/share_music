@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :ranking, :search]
   before_action :post_set, only:[:show, :edit, :update, :destroy]
-  before_action :move_to_index, only:[:edit]
+  before_action :move_to_index, only:[:edit, :destroy]
   def index
     @posts = Post.all.includes(:user).order(created_at: :desc)
     if params[:tag_name]
