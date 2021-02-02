@@ -18,7 +18,7 @@ li{
 }
 .content{
   border: 3px solid #22425a ;
-  width: calc(40vw);
+  width: 40vw;
   margin: 20px 40px;
   padding: 20px;
 }
@@ -56,4 +56,10 @@ li{
   color: #22425a;
   text-decoration: none;
   font-size: 25px;
+}
+.user-text{
+  font-size: 30px;
+  border-left: solid 5px #22425a;
+  margin: 15px 0;
+  padding: 10px 10px;
 }

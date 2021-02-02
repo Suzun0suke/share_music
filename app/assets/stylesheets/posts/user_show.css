@@ -1,0 +1,11 @@
+.likes_contents{
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.like_content{
+  display: inline-block;
+  width: 40vw;
+  border: 3px solid #22425a ;
+  margin: 20px 40px;
+  padding: 20px;
+}
