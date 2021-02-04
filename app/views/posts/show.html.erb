@@ -45,7 +45,7 @@
       <a href="https://twitter.com/intent/tweet?text=ShareMusicから共有[<%=@post.title%>]%0d&hashtags=<%=@post.tag_list[0]%>,ShareMusic%0d&url=https://share-music.herokuapp.com/posts/<%=@post.id%>">
         <i class="fab fa-twitter fa-2x twitter" aria-hidden="true" style="color: #00acee;"></i>
       </a>
-      <div class="line-it-button" data-lang="ja" data-type="share-b" data-ver="3" data-url="http://localhost:3000/posts/5" data-color="default" data-size="small" data-count="false" style="display: none;"></div>
+      <div class="line-it-button" data-lang="ja" data-type="share-b" data-ver="3" data-url="https://share-music.herokuapp.com/posts/<%=@post.id%>" data-color="default" data-size="small" data-count="false" style="display: none;"></div>
       <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
       </div>
   </div>
