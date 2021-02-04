@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :image
-    validates :url
+    validates :url, format: {with: /https?:\/\/open.spotify.com\/playlist\/[a-zA-Z0-9]{22}/}
   end
 
   def self.search(search)

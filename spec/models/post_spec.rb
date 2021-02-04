@@ -27,6 +27,11 @@ RSpec.describe Post, type: :model do
         @post.valid?
         expect(@post.errors.full_messages).to include("Url can't be blank")
       end
+      it "URLが無効" do 
+        @post.url = "https://www.google.com/"
+        @post.valid?
+        expect(@post.errors.full_messages).to include("Url is invalid")
+      end
       it "画像がない" do
         @post.image = nil
         @post.valid?
