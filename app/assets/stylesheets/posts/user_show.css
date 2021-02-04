@@ -1,11 +1,18 @@
-.likes_contents{
-  overflow-x: auto;
-  white-space: nowrap;
+.like-contents{
+  display: flex;
+  overflow-x:scroll;
 }
-.like_content{
-  display: inline-block;
+.like-content{
+  flex-shrink: 0;
   width: 40vw;
   border: 3px solid #22425a ;
   margin: 20px 40px;
   padding: 20px;
+}
+.like-musics{
+  padding-left: 30px;
+}
+.show-text{
+  margin-left: 40px;
+  color: #22425a;
 }
