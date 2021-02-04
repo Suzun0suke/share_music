@@ -42,7 +42,7 @@
         <i class="fa fa-heart fa-2x" aria-hidden="true" style="color: gray;"></i>
         <span class="like"><%= @post.likes.count %></span>
       <%end%>
-      <a href="https://twitter.com/intent/tweet?text=ShareMusicから共有%0d&hashtags=<%=@post.tag_list[0]%>,Share%0d&url=https://share-music.herokuapp.com/posts/<%=@post.id%>">
+      <a href="https://twitter.com/intent/tweet?text=ShareMusicから共有%0d&hashtags=<%=@post.tag_list[0]%>,ShareMusic%0d&url=https://share-music.herokuapp.com/posts/<%=@post.id%>">
         <i class="fab fa-twitter fa-2x twitter" aria-hidden="true" style="color: #00acee;"></i>
       </a>
       <div class="line-it-button" data-lang="ja" data-type="share-b" data-ver="3" data-url="http://localhost:3000/posts/5" data-color="default" data-size="small" data-count="false" style="display: none;"></div>
