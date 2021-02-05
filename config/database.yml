@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: sharemusic_YT_production
-  username: sharemusic_YT
-  password: <%= ENV['SHAREMUSIC_YT_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
