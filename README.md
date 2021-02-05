@@ -31,7 +31,9 @@ password: test123
 
 ## 操作概要
 - プレイリスト投稿機能
+https://gyazo.com/6d8f15f7cacfed458b2249ac17801cac
 - タグ機能
+https://gyazo.com/80427c79c045b26af4bf42d26db48d13
 - 検索機能
 - いいね機能
 - ランキング機能
