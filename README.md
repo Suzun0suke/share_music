@@ -6,7 +6,7 @@ ShareMusicはSpotifyで作成したプレイリストを共有することがで
 また、検索やハッシュタグを利用することで、自分の聞きたいプレイリストを探すことができます。
 
 ## URL
-https://share-music.herokuapp.com/
+54.168.76.17
 
 ## テスト用アカウント
 Email: test@com
@@ -35,14 +35,18 @@ https://gyazo.com/6d8f15f7cacfed458b2249ac17801cac
 - タグ機能
 https://gyazo.com/80427c79c045b26af4bf42d26db48d13
 - 検索機能
+https://gyazo.com/7b56375e08eaf44b51a59bb94d2612fe
 - いいね機能
+https://gyazo.com/32ba3e0a9748de70ad7fb6aa1f47e0cb
 - ランキング機能
+https://gyazo.com/62f32f42fc233f50245facbe1bf8fba1
 - SNS共有機能
+https://gyazo.com/cd976adab855757fc511429134a02857
 
 ## 実装予定の機能
 - 他の音楽配信サービスによる投稿
-- フォロー機能
 - iOS用アプリの作成
+
 
 ## データベース設計
 - ER図
@@ -84,8 +88,3 @@ https://gyazo.com/f3571c2c79f1109b6f7e271c10028c4b
 #### Association
 - belongs_to :user
 - belongs_to :post
-
-## ローカルでの動作方法
-①
-②
-③
