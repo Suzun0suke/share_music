@@ -19,7 +19,7 @@ li{
 .content{
   border: 3px solid #22425a ;
   width: 40vw;
-  margin: 20px 40px;
+  margin: 20px auto;
   padding: 20px;
 }
 .top-content{
@@ -62,4 +62,8 @@ li{
   border-left: solid 5px #22425a;
   margin: 15px 0;
   padding: 10px 10px;
+}
+.page{
+  display: flex;
+  justify-content: center;
 }

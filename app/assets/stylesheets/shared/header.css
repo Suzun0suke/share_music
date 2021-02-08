@@ -1,9 +1,13 @@
 *{
   box-sizing: border-box;
+  font-size: medium;
+}
+a, a:visited, a:focus, a:hover {
+  text-decoration: none;
 }
 
 .logo{
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
   color:#f7f6e7 ;
   text-decoration: none;
@@ -20,6 +24,7 @@
 .top-var{
   color:#f7f6e7 ;
   text-decoration: none;
+  font-size: 20px;
 
 }
 .top-contents {
@@ -76,4 +81,18 @@ a{
 }
 .message{
   color: #22425a;
+}
+.logo:hover{
+  color: #cc6777;
+  -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all  0.3s ease;
+}
+.top-var:hover{
+  color: #cc6777;
+  -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all  0.3s ease;
 }
