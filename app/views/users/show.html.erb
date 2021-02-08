@@ -1,5 +1,9 @@
 <h1 class = "user-text"><%=@user.name%>さんの投稿です<h1>
-<%= render "posts/contents", posts: @posts%>
+<% if @posts.present?%>
+  <%= render "posts/contents", posts: @posts%>
+<% else %>
+  <h1 class="show-text"><%=@user.name%>さんの投稿はありません</h1>
+<% end %>
 <h1 class = "user-text"><%=@user.name%>さんがいいねした投稿です<h1>
 <% if @likes.present?%>
   <div class = "like-contents">
