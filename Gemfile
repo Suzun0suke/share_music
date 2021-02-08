@@ -71,3 +71,4 @@ gem 'pry-rails'
 gem 'rspotify'
 gem 'acts-as-taggable-on', '~> 7.0'
 gem "aws-sdk-s3", require: false
+gem 'kaminari'
