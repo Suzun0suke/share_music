@@ -1,11 +1,11 @@
 <%= form_with model: post, url: url, local: true  do |form| %>
 <div class="form">
   <p>プレイリストのタイトル <span class = "required">　*必須</span></p>
-  <%= form.text_field :title, class:"post-form" %>
+  <%= form.text_field :title, class:"post-form" ,placeholder:"タイトル"%>
   <p>Spotifyで作成したプレイリストのURL<span class = "required">　*必須</span></p>
-  <%= form.text_field :url, rows: "1", class:"post-form" %>
+  <%= form.text_field :url, rows: "1", class:"post-form",placeholder:"https://open.spotify.com/playlist/から始まるURL" %>
   <p>ハッシュタグを入力してください<span class="descroption">(複数入力する場合「,」で区切ってください)</p>
-  <%= form.text_field :tag_list, rows: "1", class:"post-form" %>
+  <%= form.text_field :tag_list, rows: "1", class:"post-form",placeholder:"tag1, tag2" %>
   <div id= "search-result"></div>
   <p>プレイリストのイメージ画像<span class = "required">　*必須</span></p>
   <%= form.file_field :image %>
