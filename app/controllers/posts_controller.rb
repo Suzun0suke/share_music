@@ -52,7 +52,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:keyword]).page(params[:page]).per(7)
+    @posts = Post.search(params[:keyword])
   end
 
   def ranking

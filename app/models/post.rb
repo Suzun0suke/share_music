@@ -14,8 +14,9 @@ class Post < ApplicationRecord
 
   def self.search(search)
     if search != ""
-      Post.where('title LIKE(?)', "%#{search}%")
-      Post.tagged_with([search], wild: true, any: true)
+      post = Post.where('title LIKE(?)', "%#{search}%")
+      tag = Post.tagged_with([search], wild: true, any: true)
+      post | tag
     end
   end
   
