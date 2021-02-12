@@ -5,10 +5,8 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all.includes(:user).order(created_at: :desc).page(params[:page]).per(7)
-
-
     if params[:tag_name]
-      @posts = Post.tagged_with("#{params[:tag_name]}")
+      @posts = Post.tagged_with("#{params[:tag_name]}").page(params[:page]).per(7)
     end
   end
 
@@ -52,7 +50,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:keyword])
+    @posts = Post.search(params[:keyword]).page(params[:page]).per(7)
   end
 
   def ranking
