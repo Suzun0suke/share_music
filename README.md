@@ -6,7 +6,7 @@ ShareMusicはSpotifyで作成したプレイリストを共有することがで
 また、検索やハッシュタグを利用することで、自分の聞きたいプレイリストを探すことができます。
 
 ## URL
-54.168.76.17
+https://share-music.herokuapp.com/
 
 ## テスト用アカウント
 Email: test@com
