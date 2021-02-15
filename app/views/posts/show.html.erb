@@ -21,7 +21,7 @@
         <%= link_to (image_tag (@post.image),class: "list-img-show"), post_path(@post.id) %>
       <%end%>
       <div class="link-show">
-        <%= link_to "spotifyで聴く", "https://open.spotify.com/playlist/#{@post.url}", class:"text-show"%>
+        <%= link_to "spotifyで聴く", @post.url, class:"text-show"%>
       </div>
     <div class="hash-name-show">
       <% @post.tag_list.each do |tag| %>

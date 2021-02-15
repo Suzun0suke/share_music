@@ -16,11 +16,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.url.match("https://open.spotify.com/playlist/")
-      if @post.save
-        flash[:notice] = '投稿が完了しました'
-        redirect_to root_path
-      end
+    if @post.save
+      flash[:notice] = '投稿が完了しました'
+      redirect_to root_path
     else
       flash.now[:alert] = '無効なURL、あるいは入力されていない項目があります'
       render :new
