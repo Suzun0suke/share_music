@@ -1,1 +1,5 @@
-<%= render 'contents', posts: @posts%>
+<% if @posts.present?%>
+  <%= render 'contents', posts: @posts%>
+<% else %>
+  <h1 class="show-text">検索結果はありませんでした。</h1>
+<% end %>
