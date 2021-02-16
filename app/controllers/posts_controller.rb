@@ -11,12 +11,13 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = PostMusic.new
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
+    @post = PostMusic.new(post_params)
+    if @post.valid?
+      @post.save
       flash[:notice] = '投稿が完了しました'
       redirect_to root_path
     else
@@ -59,7 +60,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :url, :image, :name, :tag_list).merge(user_id: current_user.id)
+    params.require(:post_music).permit(:title, :url, :image, :tag_list).merge(user_id: current_user.id)
   end
 
   def post_set
@@ -71,4 +72,5 @@ class PostsController < ApplicationController
       redirect_to root_path
     end
   end
+
 end

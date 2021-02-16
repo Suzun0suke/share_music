@@ -1,7 +1,5 @@
 <div class = "contents">
   <% posts.each do |post|%>
-    <% @musics = sp_list(post.url) %>
-    <%if @musics.present?%>
       <div class="content">
         <div class="top-content">
           <h2><%= post.title%></h2>
@@ -19,9 +17,9 @@
             <%end%>
           </div>
           <ul class="musics">
-            <%@musics.length.times do |i|%>
-              <li><%=@musics[i].name%></li>
-            <%end%>
+          <% post.musics.first(10).each do |music|%>
+            <li><%= music.track %></li>
+          <% end %>
           </ul>
         </div>
         <% if user_signed_in?%>
@@ -34,5 +32,4 @@
         <%end%>
       </div>
     <% end %>
-  <% end %>
 </div>
