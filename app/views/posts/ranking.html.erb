@@ -12,8 +12,6 @@
 <div class = "contents-rank">
 
   <% @like_posts.each.with_index(1) do |post, i|%>
-    <% @musics = sp_list(post.url) %>
-    <%if @musics.present?%>
     <div class="rank"> 第<%= i  %>位 </div>
       <div class="content-rank">
         <div class="top-content">
@@ -32,8 +30,8 @@
             <%end%>
           </div>
           <ul class="musics">
-            <%@musics.length.times do |i|%>
-              <li><%=@musics[i].name%></li>
+            <%post.musics.first(10).each do |music|%>
+              <li><%=musics.track%></li>
             <%end%>
           </ul>
         </div>
@@ -47,5 +45,4 @@
         <%end%>
       </div>
     <% end %>
-  <% end %>
 </div>
