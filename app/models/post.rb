@@ -10,7 +10,9 @@ class Post < ApplicationRecord
     if search != ""
       post = Post.where('title LIKE(?)', "%#{search}%")
       tag = Post.tagged_with([search], wild: true, any: true)
-      post | tag
+      music = Post.joins(:musics).where('track LIKE(?)', "%#{search}%")
+      
+      post | tag | music
     end
   end
   
