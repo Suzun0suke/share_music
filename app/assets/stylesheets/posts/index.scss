@@ -21,6 +21,7 @@ li{
   width: 40vw;
   margin: 20px 40px;
   padding: 20px;
+  position: relative;
 }
 .top-content{
   display: flex;
@@ -66,4 +67,12 @@ li{
 .page{
   display: flex;
   justify-content: center;
+}
+.favorites{
+  
+}
+.favorite{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
 }
