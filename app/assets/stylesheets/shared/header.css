@@ -94,8 +94,9 @@ a{
   width: 20%;
   left: -20%;
   top: 0;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   transition: .5s;
+  z-index: 1;
 }
 #nav ul{
   padding-top: 80px;
@@ -126,6 +127,7 @@ a{
   height: 44px;
   cursor: pointer;
   transition: 1s;
+  z-index: 2;
 }
 .inner_line {
   display: block;
