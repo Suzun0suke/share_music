@@ -1,5 +1,36 @@
 <header class="top-page-header">
   <div class="top-contents">
+  <nav id='nav'>
+      <ul>
+        <% if user_signed_in? %>
+        <p class="greeting">こんにちは<%=current_user.name%>さん<p>
+          <li>
+            <%= link_to "投稿", new_post_path, class:"user-btn" %>
+          </li>
+          <li>
+            <%= link_to "マイページ", user_path(current_user.id) %>
+          </li>
+          <li>
+            <%= link_to "ユーザー情報編集", edit_user_registration_path(current_user.id) %>
+          </li>
+          <li>
+            <%= link_to "ログアウト", destroy_user_session_path, method: "DELETE", class:"user-btn" %>
+          </li>
+      <% else %>
+        <li>
+          <%= link_to "ログイン", new_user_session_path, class: "user-btn" %>
+        </li>
+        <li>
+          <%= link_to "新規登録", new_user_registration_path, class:"user-btn" %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+  <div id="hamburger">
+      <span class="inner_line" id="line1"></span>
+      <span class="inner_line" id="line2"></span>
+      <span class="inner_line" id="line3"></span>
+  </div>
     <%= link_to "Share Music", root_path , class:"logo" %>
     <%= link_to "Ranking", ranking_posts_path, class: "top-var" %>
     <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
@@ -14,18 +45,4 @@
         </div>
       <% end %>
     <% end %>
-  <div class= "head-bottom-contents">
-  <% if user_signed_in? %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: "DELETE", class:"user-btn" %>
-    <%= link_to "投稿", new_post_path, class:"user-btn" %>
-    <% if current_user.image.present?%>
-    <%= link_to image_tag(current_user.image.variant(resize: '50x50'), class:"user-icon"), user_path(current_user.id) %>
-    <% else %>
-    <%= link_to "#{current_user.name}さん", user_path(current_user.id) %>
-    <% end %>
-  <% else %>
-    <%= link_to "ログイン", new_user_session_path, class: "user-btn" %>
-    <%= link_to "新規登録", new_user_registration_path, class:"user-btn" %>
-  <% end %>
-  </div>
 </header>
