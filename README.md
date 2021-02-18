@@ -15,7 +15,7 @@ password: test123
 ## 利用方法
 アカウントにログインし、投稿画面に遷移します。
 プレイリストのタイトル、spotifyのプレイリストのurl、画像を添付することで投稿することが可能です。
-また、投稿一覧から興味のあるプレイリストをクリックし、「spotifyで聴く」をクリックすることでspotifyに遷移することが可能です。
+また、検索フォームから好きな曲、気分、単語などで検索し、投稿一覧から興味のあるプレイリストをクリックし、「spotifyで聴く」をクリックすることでspotifyに遷移することが可能です。
 
 ## 目指した課題解決
 音楽を聴くことが好きな人たちが、新しい音楽と出会うことができるように、シーンに合った音楽を簡単に見つけることができるようにアプリの作成を行いました。
@@ -51,7 +51,7 @@ https://gyazo.com/cd976adab855757fc511429134a02857
 
 ## データベース設計
 - ER図
-https://gyazo.com/f3571c2c79f1109b6f7e271c10028c4b
+https://gyazo.com/216c4a1aca0c51426a8c4c850a65fb95
 
 ### usersテーブル
 | Column             | Type          | Options                   | 
@@ -78,7 +78,9 @@ https://gyazo.com/f3571c2c79f1109b6f7e271c10028c4b
 - has_many :likes
 - belongs_to :user
 - has_one_attached :image
-- has_many :tags, through :post_tags
+- ~~has_many :tags, through :post_tags~~ → acts_as_taggable 
+- has_many :playlists
+- has_many :musics, through: :playlists
 
 ### likesテーブル
 | Column | Type       | Options                        | 
@@ -89,3 +91,22 @@ https://gyazo.com/f3571c2c79f1109b6f7e271c10028c4b
 #### Association
 - belongs_to :user
 - belongs_to :post
+
+### musicsテーブル
+| Column | Type       | Options                        | 
+| ------ | ---------- | ------------------------------ | 
+| track  | string     | null: false, uniqueness: true  | 
+
+#### Association
+- has_many :playlists
+- has_many :posts, through: :playlists
+
+### playlistsテーブル
+| Column | Type       | Options                        | 
+| ------ | ---------- | ------------------------------ | 
+| post   | references | null: false, foreign_key: true | 
+| music  | references | null: false, foreign_key: true | 
+
+#### Association
+- belongs_to :post
+- belongs_to :music
