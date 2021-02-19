@@ -6,6 +6,12 @@ class Post < ApplicationRecord
   has_many :playlists, dependent: :destroy
   has_many :musics, through: :playlists
   
+  with_options presence: true do
+    validates :title
+    validates :image
+    validates :url, format: {with: /https?:\/\/open.spotify.com\/playlist\/[a-zA-Z0-9]{22}\?si=[a-zA-Z0-9]{16}/}
+  end
+  
   def self.search(search)
     if search != ""
       post = Post.where('title LIKE(?)', "%#{search}%")

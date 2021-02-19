@@ -31,7 +31,7 @@ class PostMusic
     post = Post.create(title: title, url: url, user_id: user_id, image: image, tag_list: tag_list )
     sp_list(url)
     @musics.uniq.each do |track|
-      music = Music.where(track: track). first_or_initialize
+      music = Music.where(track: track).first_or_initialize
       if music.save
       Playlist.create(post_id: post.id, music_id: music.id)
       end

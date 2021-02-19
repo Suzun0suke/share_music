@@ -8,6 +8,7 @@ RSpec.describe Post, type: :model do
 
     context "投稿が保存できる" do
       it "必要な情報がある" do
+        @post.valid?
         expect(@post).to be_valid
       end
       it "ハッシュタグがない" do 
