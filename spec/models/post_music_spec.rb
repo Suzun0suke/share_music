@@ -1,9 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Post, type: :model do
+RSpec.describe PostMusic, type: :model do
   describe "投稿" do
     before do
-      @post = FactoryBot.build(:post)
+      user = FactoryBot.create(:user)
+      @post = FactoryBot.build(:post, user_id: user.id)
     end
 
     context "投稿が保存できる" do
